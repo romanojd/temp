@@ -46,80 +46,32 @@ Section 5, Example OpenC2 Use Case, depicts an example use case for mitigating a
 
 Appendix A, Example OpenC2 commands, contains example OpenC2 commands organized in tables by OpenC2 action. These example commands were based on use cases provided by government agencies, critical infrastructure, industry (e.g., security orchestrator, actuator, and sensor) and academia.
 
+# Background
+## Design Principles
 
-<span id="_Ref444670906" class="anchor"><span id="_Toc459584777" class="anchor"></span></span>Background
-========================================================================================================
+OpenC2 can be implemented in a variety of systems to perform the secure delivery and management of command and control messages in a context-specific way. OpenC2 commands are vendor neutral and message fabric agnostic, thus can be incorporated in different architectures and environments (i.e. connection oriented, connectionless, pub-sub, hub and spoke, etc.).
 
-<span id="_Toc444258418" class="anchor"><span id="_Toc444611150" class="anchor"><span id="_Toc459584778" class="anchor"></span></span></span>Design Principles
---------------------------------------------------------------------------------------------------------------------------------------------------------------
+OpenC2 was designed to have a concise set of core actions that are extensible through attributes and modifiers to the language to provide context specific details. Conciseness ensures minimal overhead to meet possible latency and overhead constraints while extensions enable greater utility and flexibility.
 
-<span id="_Toc439802221" class="anchor"><span id="_Toc439802590"
-class="anchor"></span></span>OpenC2 can be implemented in a variety of
-systems to perform the secure delivery and management of command and
-control messages in a context-specific way. OpenC2 commands are vendor
-neutral and message fabric agnostic, thus can be incorporated in
-different architectures and environments (i.e. connection oriented,
-connectionless, pub-sub, hub and spoke, etc.).
+There is an underlying assumption that issuing OpenC2 commands are event-driven and that an action is warranted. OpenC2 was designed to focus on the actions that are to be executed in order to thwart an attack, mitigate some vulnerability or otherwise address a threat. The exchange of indicators, rationale for the decision to act, authentication and/or information sharing are beyond the scope of OpenC2 and left to other standards such as STIX.
 
-<span id="_Toc439802224" class="anchor"><span id="_Toc439802593"
-class="anchor"></span></span>OpenC2 was designed to have a concise set
-of core actions that are extensible through attributes and modifiers to
-the language to provide context specific details. Conciseness ensures
-minimal overhead to meet possible latency and overhead constraints while
-extensions enable greater utility and flexibility.
+The actual performance and efficacy of OpenC2 will be implementation-specific and will require the incorporation of other technologies. The OpenC2 design principles include the following:
 
-There is an underlying assumption that issuing OpenC2 commands are
-event-driven and that an action is warranted. OpenC2 was designed to
-focus on the actions that are to be executed in order to thwart an
-attack, mitigate some vulnerability or otherwise address a threat. The
-exchange of indicators, rationale for the decision to act,
-authentication and/or information sharing are beyond the scope of OpenC2
-and left to other standards such as STIX.
-
-The actual performance and efficacy of OpenC2 will be
-implementation-specific and will require the incorporation of other
-technologies. The OpenC2 design principles include the following:
-
--   Support cyber relevant response time for coordination and
-    response actions.
-
+-   Support cyber relevant response time for coordination and response actions.
 -   Be infrastructure, architecture, and vendor agnostic.
+-   Support multiple levels of abstraction, necessary to permit the contextualization of commands for a wide variety of operating environments.
+-   Permit commands to be invoked that are either tasking/response actions or notifications.
 
--   Support multiple levels of abstraction, necessary to permit the
-    contextualization of commands for a wide variety of
-    operating environments.
+    -   Tasking/response actions result in a state change.
 
--   Permit commands to be invoked that are either tasking/response
-    actions or notifications.
+    -   Notifications require supporting analytics/decision processes.
 
-<!-- -->
+-   Provide an extensible syntax to accommodate different types of actions, targets, and actuators (e.g., sensor, endpoint, network device, human) and specific targets and actuators.
+-   Ensure the OpenC2 command is independent of a message construct that provides transport, identifies priority/ quality of service, and supports security attributes.
 
--   Tasking/response actions result in a state change.
+Traditional command and control implementations utilize complete, self-standing constructs. OpenC2 decouples the actions from the targets of the actions and from the recipients of the commands. An OpenC2 command is not complete until an action is paired with a target, providing the command context for the action. This enables the OpenC2 language to be more concise, yet still support the entire C2 space. This characteristic of OpenC2 also permits a more flexible and extensible approach to accommodate future technologies and varying network environments.
 
--   Notifications require supporting analytics/decision processes.
-
-<!-- -->
-
--   Provide an extensible syntax to accommodate different types of
-    actions, targets, and actuators (e.g., sensor, endpoint, network
-    device, human) and specific targets and actuators.
-
--   Ensure the OpenC2 command is independent of a message construct that
-    provides transport, identifies priority/ quality of service, and
-    supports security attributes.
-
-Traditional command and control implementations utilize complete,
-self-standing constructs. OpenC2 decouples the actions from the targets
-of the actions and from the recipients of the commands. An OpenC2
-command is not complete until an action is paired with a target,
-providing the command context for the action. This enables the OpenC2
-language to be more concise, yet still support the entire C2 space. This
-characteristic of OpenC2 also permits a more flexible and extensible
-approach to accommodate future technologies and varying network
-environments.
-
-<span id="_Toc439802227" class="anchor"><span id="_Toc439802596" class="anchor"><span id="_Toc439802676" class="anchor"><span id="_Toc439802757" class="anchor"><span id="_Toc439802838" class="anchor"><span id="_Toc439802918" class="anchor"><span id="_Toc439806040" class="anchor"><span id="_Toc439802228" class="anchor"><span id="_Toc439802597" class="anchor"><span id="_Toc439802677" class="anchor"><span id="_Toc439802758" class="anchor"><span id="_Toc439802839" class="anchor"><span id="_Toc439802919" class="anchor"><span id="_Toc439802231" class="anchor"><span id="_Toc439802600" class="anchor"><span id="_Toc439802680" class="anchor"><span id="_Toc439802761" class="anchor"><span id="_Toc439802842" class="anchor"><span id="_Toc439802922" class="anchor"><span id="_Toc439783539" class="anchor"><span id="_Toc439783608" class="anchor"><span id="_Toc439802232" class="anchor"><span id="_Toc439802601" class="anchor"><span id="_Toc439802681" class="anchor"><span id="_Toc439802762" class="anchor"><span id="_Toc439802843" class="anchor"><span id="_Toc439802923" class="anchor"><span id="_Toc439806043" class="anchor"><span id="_Toc439783548" class="anchor"><span id="_Toc439783617" class="anchor"><span id="_Toc439802241" class="anchor"><span id="_Toc439802610" class="anchor"><span id="_Toc439802690" class="anchor"><span id="_Toc439802771" class="anchor"><span id="_Toc439802852" class="anchor"><span id="_Toc439802932" class="anchor"><span id="_Toc439806052" class="anchor"><span id="_Toc439783549" class="anchor"><span id="_Toc439783618" class="anchor"><span id="_Toc439802242" class="anchor"><span id="_Toc439802611" class="anchor"><span id="_Toc439802691" class="anchor"><span id="_Toc439802772" class="anchor"><span id="_Toc439802853" class="anchor"><span id="_Toc439802933" class="anchor"><span id="_Toc439806053" class="anchor"><span id="_Toc439783554" class="anchor"><span id="_Toc439783623" class="anchor"><span id="_Toc439802247" class="anchor"><span id="_Toc439802616" class="anchor"><span id="_Toc439802696" class="anchor"><span id="_Toc439802777" class="anchor"><span id="_Toc439802858" class="anchor"><span id="_Toc439802938" class="anchor"><span id="_Toc439806058" class="anchor"><span id="_Toc444258419" class="anchor"><span id="_Toc444611151" class="anchor"><span id="_Toc459584779" class="anchor"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>OpenC2 and Deployment Environments
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## OpenC2 and Deployment Environments
 
 OpenC2 is defined at a level of abstraction such that an inter-domain
 tasking or coordination effort can be described without requiring in
