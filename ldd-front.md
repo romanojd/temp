@@ -1,5 +1,3 @@
-<span id="_forward"></span>
-
 # FOREWORD
 
 The Open Command and Control Forum (OpenC2 or the Forum) supports the cyber defense community of interest. The Open Command and Control Forum promotes the global development and adoption of the OpenC2 language and reference material.
@@ -10,9 +8,6 @@ This document represents the outcome of collaboration between technology vendors
 
 Visit openc2.org for other on-line resources.
 
-
-<span id="_introduction"></span>
-
 # Introduction
 
 Cyberattacks are increasingly more sophisticated, less expensive to execute, dynamic, and automated. Current cyber defense products are typically integrated in a unique or proprietary manner and statically configured. As a result, upgrading or otherwise modifying tightly integrated, proprietary cyber defense’s functional blocks is resource intensive; cannot be realized within a cyber-relevant timeframe; and the upgrades may degrade the overall performance of the system.
@@ -21,13 +16,9 @@ Future cyber defenses against current and pending attacks require the integratio
 
 Standardization of the lexicons and languages used in the interfaces and protocols necessary for machine-to-machine command and control communications in cyber relevant time will enable cyber defense system flexibility, interoperability, and responsiveness in cyber relevant time.
 
-<span id="_purpose"></span>
-
 ## Purpose
 
 The purpose of the Open Command and Control (OpenC2) Language Description Document is to define a language and lexicon at a level of abstraction that will enable the coordination and execution of command and control of cyber defense components between domains and within a domain. It is expected that the OpenC2 language can be profiled (e.g., applicable commands, applicable values) by community groups for specific uses like Software Defined Networking.
-
-<span id="_scope"></span>
 
 ## Scope
 
@@ -37,21 +28,17 @@ Future OpenC2 efforts will further refine the controlled vocabulary and define i
 
 The definition of a language such as OpenC2 is necessary but insufficient to enable future cyber defenses. OpenC2 commands can be carried within any number of constructs (e.g., STIX, workflows, playbooks). In addition, OpenC2 is designed to be flexible, agnostic of external protocols that provide services such as transport, authentication, key management and other services. Cyber defense implementations will still need to rely on other protocols and security services.
 
-<span id="_indended_audience"></span>
-
 ## Intended Audience
 
 This OpenC2 Language Description Document is intended for organizations investigating the implementation of automated pre-approved cyber defensive measures as well as academia and industry partners involved with the development and integration of security orchestration, network components or services, endpoint security applications, and security services for cyber defenses.
 
-<span id="_document_overview"></span>
-
 ## Document Overview
 
-Section 1, Introduction, describes the impetus for the OpenC2 language and lays out the purpose, scope, and intended audience of the document.
+[Section 1, Introduction](#introduction), describes the impetus for the OpenC2 language and lays out the purpose, scope, and intended audience of the document.
 
-Section 2, Background, describes the design principles for the language and how the language can be contextualized for different operating environments.
+[Section 2, Background](#background), describes the design principles for the language and how the language can be contextualized for different operating environments.
 
-Section 3, OpenC2 Language, describes the abstract syntax and the basic building blocks of the language. It also further specifies the vocabulary for actions, targets, actuators, and modifiers.
+[Section 3, OpenC2 Language](#openc2-language), describes the abstract syntax and the basic building blocks of the language. It also further specifies the vocabulary for actions, targets, actuators, and modifiers.
 
 Section 4, Example OpenC2 Usage, provides examples of OpenC2 command constructs. For each action, the supported targets, actuators, and action specific modifiers are identified and example usages are provided.
 
