@@ -98,23 +98,23 @@ Conceptually, an OpenC2 command has the following form:
 ```
 (
 	ACTION (
-		type = &lt;ACTION\_TYPE&gt;
+		type = <ACTION_TYPE>
 	),
 	TARGET (
-		type = &lt;TARGET\_TYPE&gt;,
-		&lt;target-specifier&gt;
+		type = <TARGET_TYPE>,
+		<target-specifier>
 	),
 	ACTUATOR (
-		type = &lt;ACTUATOR\_TYPE&gt;,
-		&lt;actuator-specifier&gt;
+		type = <ACTUATOR_TYPE>,
+		<actuator-specifier>
 	),
 	MODIFIERS (
-		&lt;list-of-modifiers&gt;
+		<list-of-modifiers>
 	)
 )
 ```
 
-Fields denoted with angle brackets (“&lt;&gt;“) are replaced with the appropriate details. Some of the fields are considered optional. The table below describes these fields and whether they are required, optional or ignored in certain situations. Actual implementation approaches will leverage pre-existing conventions and notations such as XML, JSON, or Type-Length-Value delimitation.
+Fields denoted with angle brackets ("&lt;&gt;") are replaced with the appropriate details. Some of the fields are considered optional. The table below describes these fields and whether they are required, optional or ignored in certain situations. Actual implementation approaches will leverage pre-existing conventions and notations such as XML, JSON, or Type-Length-Value delimitation.
 
 The following table contains the description of the fields that can be contained in an OpenC2 command.
 
@@ -122,7 +122,6 @@ Table 3-1. OpenC2 Command Field Descriptions
 
 Field | Description
 ----- | -----------
-
 ACTION | Required. The task or activity to be performed (i.e., the ‘verb’).
 type | Required. The ACTION type is the name of the action.
 TARGET | Required for actions, not applicable for responses. The object of the action. The ACTION is performed on the TARGET.
