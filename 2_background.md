@@ -31,8 +31,8 @@ This level of abstraction permits end to end applicability of OpenC2. As depicte
 
 Each domain or enclave contextualizes an OpenC2 action for the specific sensors and actuators within its environment so it can further specify the command to reflect the implementations of which it is capable. Context-specific modifiers provide an ability to further specify the action while enabling the set of actions to remain tightly constrained. This minimizes the overhead, permits further contextualization of the OpenC2 commands for specific environments, and thereby enables flexibility and extensibility. 
 
-[](figure_2-1.emf){width="6.5in" height="3.6417410323709536in"}
+![alt text](figure_2-1.png "OpenC2 Deployment Environments")
 
-Figure 2-1. OpenC2 Deployment Environments
+**Figure 2-1. OpenC2 Deployment Environments**
 
 For example, an organization may have executed a series of actions to protect against a particular attack that was signaled by an external indicator (such as a STIX message). In order to elicit a consistent response across an organization (whether hierarchical or peer to peer), a complex course of action can be constructed and shared. The use of standardized and unambiguous OpenC2 commands to communicate a responsive action between enterprises/enclaves will be more precise and more quickly actionable than a set of recommended steps within a text document (e.g., flash), which must be parsed, analyzed, interpreted, and executed. Standardizing OpenC2 commands helps to ensure a more uniform response at enterprises/enclaves that reflects enterprise-wide level decisions.
