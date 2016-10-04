@@ -1,5 +1,5 @@
-# Background
-## Design Principles
+# 2. Background
+## 2.1 Design Principles
 
 OpenC2 can be implemented in a variety of systems to perform the secure delivery and management of command and control messages in a context-specific way. OpenC2 commands are vendor neutral and message fabric agnostic, thus can be incorporated in different architectures and environments (i.e. connection oriented, connectionless, pub-sub, hub and spoke, etc.).
 
@@ -23,7 +23,7 @@ The actual performance and efficacy of OpenC2 will be implementation-specific an
 
 Traditional command and control implementations utilize complete, self-standing constructs. OpenC2 decouples the actions from the targets of the actions and from the recipients of the commands. An OpenC2 command is not complete until an action is paired with a target, providing the command context for the action. This enables the OpenC2 language to be more concise, yet still support the entire C2 space. This characteristic of OpenC2 also permits a more flexible and extensible approach to accommodate future technologies and varying network environments.
 
-## OpenC2 and Deployment Environments
+## 2.2 OpenC2 and Deployment Environments
 
 OpenC2 is defined at a level of abstraction such that an inter-domain tasking or coordination effort can be described without requiring in depth knowledge of the recipient network’s components, but through the use of specifiers and modifiers, enough detail can be appended to carry out specific tasks on particular devices to support intra-domain command and control.
 
@@ -31,7 +31,7 @@ This level of abstraction permits end to end applicability of OpenC2. As depicte
 
 Each domain or enclave contextualizes an OpenC2 action for the specific sensors and actuators within its environment so it can further specify the command to reflect the implementations of which it is capable. Context-specific modifiers provide an ability to further specify the action while enabling the set of actions to remain tightly constrained. This minimizes the overhead, permits further contextualization of the OpenC2 commands for specific environments, and thereby enables flexibility and extensibility. 
 
-![alt text](figure_2-1.png "OpenC2 Deployment Environments")
+![alt text](figures/figure_2-1.png "OpenC2 Deployment Environments")
 
 **Figure 2-1. OpenC2 Deployment Environments**
 

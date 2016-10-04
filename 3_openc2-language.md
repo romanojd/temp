@@ -1,10 +1,10 @@
-# OpenC2 Language
+# 3. OpenC2 Language
 
-## Overview
+## 3.1 Overview
 
 The OpenC2 language is designed at a level of abstraction high enough such that it enables persistence as technologies advance and is implementation agnostic, but detailed enough so that the need for specifiers and modifiers is limited.
 
-## Abstract Syntax
+## 3.2 Abstract Syntax
 
 Conceptually, an OpenC2 command has the following form:
 
@@ -66,25 +66,25 @@ Block traffic at specific network router; \[specify identity of network router\]
 Block access to bad external IP by null routing; \[specify method of performing action\]; suitable within an enclave | DENY | Network Connection<hr>Source and/or Destination IP Address | Network.router<hr>(optional) | Method= blackhole
 
 
-### Action
+### 3.2.1 Action
 
 All OpenC2 commands start with an ACTION which indicates the type of command to perform such as gather and convey information, control activities and devices, and control permissions and access. The range of options and potential impact on the information system associated with a particular ACTION is a function of the ACTUATOR. For cases that involve multiple options for an ACTION, modifiers are used.
 
 Refer to Section 3.3 for the list of ACTIONs and their definitions and usage.
 
-### Target
+### 3.2.2 Target
 
 The TARGET is the object of the ACTION (or alternatively, the ACTION is performed on the TARGET). Targets include objects such as network connections, URLs, hashes, IP addresses, files, processes, and domains.
 
 There will be only one TARGET type per OpenC2 command. By design, OpenC2 will support any data model, but for illustrative purposes OpenC2 TARGETs will reference CybOX objects to the greatest extent practical in this document. Data models will be identified by a namespace before the TARGET type name. Section 3.4 contains a compiled list and definitions of the TARGETs that support the OpenC2 language.
 
-### Actuator
+### 3.2.3 Actuator
 
 An ACTUATOR[^1] is the entity that puts command and control into motion or action. The ACTUATOR is the subject of the ACTION which performs the ACTION on the TARGET. There are varying levels of abstraction and functionality for an ACTUATOR ranging from a specific sensor to an entire system or even system of systems.
 
 There will be only one ACTUATOR type per OpenC2 command. OpenC2 will leverage existing data models to the greatest extent practical (e.g., the Secure Automation and Configuration Management (SACM) working group, ISCM taxonomy). Section 3.5 contains a compiled list of actuators with definitions used to support OpenC2.
 
-### Specifiers
+### 3.2.4 Specifiers
 
 “Specifiers” are used to identify specific individual or groups of targets or actuators. Table 3-3 illustrates how the commands are appended with specifiers as context specific details become available.
 
@@ -96,7 +96,7 @@ Block malicious URL | DENY | URI/URL<hr>Value Condition = Equals | |
 Quarantine Artifact with particular byte string | QUARANTINE | Artifact<hr>Condition = Contains | | 
 Block access to external IP address by null routing at specific network routers | DENY | Network Connection<hr>Condition = Contains | Network router<hr>Manufacturer, Model, Serial Number Value = 123
 
-### Modifiers
+### 3.2.5 Modifiers
 
 “Modifiers” provide additional information about the action such as time, periodicity, duration, and location. Modifiers can denote the when, where, and how aspects of an action. Modifiers are similar to specifiers in that they can provide additional context specific details, and are intended to provide additional details for action/actuator pairs.
 
@@ -113,32 +113,32 @@ Start Process with Delay | START | Process<hr>Process Object Type | endpoint<hr>
 Quarantine a device | CONTAIN | Device<hr>Device Object Type | network<hr>(optional) | where (network segment, vlan)
 Block access to suspicious external IP address by redirecting external DNS queries to an internal DNS server | DENY | Network Connection<hr>Network Connection Object Type | DNS Server | method = sinkhole
 
-## Actions
+## 3.3 Actions
 
 This section defines the set of OpenC2 actions grouped by their general activity. The following table summarizes the definition of the OpenC2 actions. Subsequent sections will identify the appropriate targets for each action and the appropriate actuators for the action target pair.
 
-### Actions that Gather and Convey Information
+### 3.3.1 Actions that Gather and Convey Information
 
 These actions are used to gather information needed to further determine courses of action or assess the effectiveness of courses of action. These actions can be used to support data enrichment use cases and maintain situational awareness. These actions typically do not impact the state of the target and are normally not detectable by external observers.
 
-### Actions that Control Permissions
+### 3.3.2 Actions that Control Permissions
 
 These actions are used to control permissions and accesses. The permissions and accesses can be for person or non-person entities.
 
-### Actions that Control Activities/Devices
+### 3.3.3 Actions that Control Activities/Devices
 
 These actions are used to control the state or the activity of a system, a process, a connection, a host, or a device (e.g., endpoint, sensor, actuator). The actions are used to adjust configurations, set and update parameters, and modify attributes.
 
-### Sensor-Related Actions
+### 3.3.4 Sensor-Related Actions
 
 These actions are used to control the activities of a sensor in terms of how to collect and provide the sensor data.
 
-### Effects-Based Actions
+### 3.3.5 Effects-Based Actions
 
 Effects-based actions are at a higher level of abstraction and focus on the desired impact rather than a command to execute specific task(s) within an enclave. The benefit of including effects-based actions is that it permits a higher level or peer enclave to coordinate actions, while still permitting a local enclave to optimize its workflow for its specific environment in order to achieve the desired result.
 
 Implementation of an effects-based action requires that the recipient enclave has a decision making capability because an effects-based action permits multiple possible responses.
 
-### Response and Alert
+### 3.3.6 Response and Alert
 
 RESPONSE is used to provide data requested as a result of an action. The RESPONSE message will contain the requested data and have a reference to the action that initiated the response. ALERT is used to signal the occurrence of an event or error. It is an unsolicited message that does not reference a previously issued action.
