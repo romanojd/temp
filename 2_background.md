@@ -1,4 +1,4 @@
-# [1. Introduction](1_introduction)
+# [1. Introduction](1_introduction.md#1-introduction)
 
 # 2. Background
 ## 2.1 Design Principles
@@ -39,4 +39,4 @@ Each domain or enclave contextualizes an OpenC2 action for the specific sensors 
 
 For example, an organization may have executed a series of actions to protect against a particular attack that was signaled by an external indicator (such as a STIX message). In order to elicit a consistent response across an organization (whether hierarchical or peer to peer), a complex course of action can be constructed and shared. The use of standardized and unambiguous OpenC2 commands to communicate a responsive action between enterprises/enclaves will be more precise and more quickly actionable than a set of recommended steps within a text document (e.g., flash), which must be parsed, analyzed, interpreted, and executed. Standardizing OpenC2 commands helps to ensure a more uniform response at enterprises/enclaves that reflects enterprise-wide level decisions.
 
-# [3. OpenC2 Language](3.0_openc2-language.md)
+# [3. OpenC2 Language](3.0_openc2-language.md#3-openc2-language)
