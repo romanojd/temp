@@ -26,9 +26,9 @@ This OpenC2 Language Description Document is intended for organizations investig
 
 [Section 1, Introduction](#introduction), describes the impetus for the OpenC2 language and lays out the purpose, scope, and intended audience of the document.
 
-[Section 2, Background](#background), describes the design principles for the language and how the language can be contextualized for different operating environments.
+[Section 2, Background](2_background.md), describes the design principles for the language and how the language can be contextualized for different operating environments.
 
-[Section 3, OpenC2 Language](#openc2-language), describes the abstract syntax and the basic building blocks of the language. It also further specifies the vocabulary for actions, targets, actuators, and modifiers.
+[Section 3, OpenC2 Language](3_openc2-language.md), describes the abstract syntax and the basic building blocks of the language. It also further specifies the vocabulary for actions, targets, actuators, and modifiers.
 
 Section 4, Example OpenC2 Usage, provides examples of OpenC2 command constructs. For each action, the supported targets, actuators, and action specific modifiers are identified and example usages are provided.
 
