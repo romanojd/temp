@@ -26,16 +26,16 @@ This OpenC2 Language Description Document is intended for organizations investig
 
 ## 1.4 Document Overview
 
-[Section 1, Introduction](#introduction), describes the impetus for the OpenC2 language and lays out the purpose, scope, and intended audience of the document.
+[Section 1, Introduction](#1-introduction), describes the impetus for the OpenC2 language and lays out the purpose, scope, and intended audience of the document.
 
-[Section 2, Background](2_background.md), describes the design principles for the language and how the language can be contextualized for different operating environments.
+[Section 2, Background](2_background.md#2-background), describes the design principles for the language and how the language can be contextualized for different operating environments.
 
-[Section 3, OpenC2 Language](3_openc2-language.md), describes the abstract syntax and the basic building blocks of the language. It also further specifies the vocabulary for actions, targets, actuators, and modifiers.
+[Section 3, OpenC2 Language](3.0_openc2-language.md#3-openc2-language), describes the abstract syntax and the basic building blocks of the language. It also further specifies the vocabulary for actions, targets, actuators, and modifiers.
 
-Section 4, Example OpenC2 Usage, provides examples of OpenC2 command constructs. For each action, the supported targets, actuators, and action specific modifiers are identified and example usages are provided.
+[Section 4, Example OpenC2 Usage](4_example-openc2-usage.md#4-example-openc2-usage), provides examples of OpenC2 command constructs. For each action, the supported targets, actuators, and action specific modifiers are identified and example usages are provided.
 
-Section 5, Example OpenC2 Use Case, depicts an example use case for mitigating an evil domain. The use case shows the OpenC2 commands that could be used to mitigate the attacks or vulnerabilities and where they could be applied.
+[Section 5, Example OpenC2 Use Case](5_example-openc2-use-case.md#5-example-openc2-use-case), depicts an example use case for mitigating an evil domain. The use case shows the OpenC2 commands that could be used to mitigate the attacks or vulnerabilities and where they could be applied.
 
-Appendix A, Example OpenC2 commands, contains example OpenC2 commands organized in tables by OpenC2 action. These example commands were based on use cases provided by government agencies, critical infrastructure, industry (e.g., security orchestrator, actuator, and sensor) and academia.
+[Appendix A, Example OpenC2 Commands](A_example-openc2-commands.md#appendix-a-example-openc2-commands), contains example OpenC2 commands organized in tables by OpenC2 action. These example commands were based on use cases provided by government agencies, critical infrastructure, industry (e.g., security orchestrator, actuator, and sensor) and academia.
 
 # [2. Background](2_background.md#2-background)
