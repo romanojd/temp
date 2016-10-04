@@ -1,6 +1,6 @@
 # [3. OpenC2 Language](3.0_openc2-language.md#3-openc2-language)
 
-## [3.6 Modifier Vocabulary](3.6_modifiers.md#36-modifier-vocabulary)
+## [3.6 Modifier Vocabulary](3.6_modifier-vocabulary.md#36-modifier-vocabulary)
 
 # 4. EXAMPLE OpenC2 USAGE
 
