@@ -8,4 +8,4 @@ This document represents the outcome of collaboration between technology vendors
 
 Visit openc2.org for other on-line resources.
 
-# [1. Introduction](1_introduction.md)
+# [1. Introduction](1_introduction.md#introduction)
