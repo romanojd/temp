@@ -7,3 +7,5 @@ This Forum serves developers, users, and the entire cybersecurity ecosystem by p
 This document represents the outcome of collaboration between technology vendors, government agencies, and academia on the topic of command and control for cyber defensive measures. We gratefully acknowledge their contributions to the definition of the OpenC2 language. As we exercise the language in reference implementations, we expect to continue to refine the language to ensure its suitability to support machine-to-machine command and control communications in response to cyber threats in cyber-relevant time.
 
 Visit openc2.org for other on-line resources.
+
+# [1. Introduction](1_introduction.md)

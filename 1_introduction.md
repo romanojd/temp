@@ -1,3 +1,5 @@
+# [FORWARD](0_forward.md)
+
 # 1. Introduction
 
 Cyberattacks are increasingly more sophisticated, less expensive to execute, dynamic, and automated. Current cyber defense products are typically integrated in a unique or proprietary manner and statically configured. As a result, upgrading or otherwise modifying tightly integrated, proprietary cyber defense’s functional blocks is resource intensive; cannot be realized within a cyber-relevant timeframe; and the upgrades may degrade the overall performance of the system.
@@ -35,3 +37,5 @@ Section 4, Example OpenC2 Usage, provides examples of OpenC2 command constructs.
 Section 5, Example OpenC2 Use Case, depicts an example use case for mitigating an evil domain. The use case shows the OpenC2 commands that could be used to mitigate the attacks or vulnerabilities and where they could be applied.
 
 Appendix A, Example OpenC2 commands, contains example OpenC2 commands organized in tables by OpenC2 action. These example commands were based on use cases provided by government agencies, critical infrastructure, industry (e.g., security orchestrator, actuator, and sensor) and academia.
+
+# [2. Background](2_background.md)
