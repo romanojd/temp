@@ -177,66 +177,30 @@ There will be only one ACTUATOR type per OpenC2 command. OpenC2 will leverage ex
 
 Table 3-3. Example Usage of Specifiers
 
-  Description                                                                       Action       Target                     Actuator                                         Modifier
-  --------------------------------------------------------------------------------- ------------ -------------------------- ------------------------------------------------ ----------
-                                                                                                 Target-Specifier           Actuator-Specifier                               
-  Block malicious URL                                                               DENY         URI/URL                                                                     
-                                                                                                 Value Condition = Equals                                                    
-  Quarantine Artifact with particular byte string                                   QUARANTINE   Artifact                                                                    
-                                                                                                 Condition = Contains                                                        
-  Block access to external IP address by null routing at specific network routers   DENY         Network Connection         Network router                                   
-                                                                                                 Condition = Contains       Manufacturer, Model, Serial Number Value = 123   
+Description | Action | Target<hr>Target-Specifier | Actuator<hr>Actuator-Specifier | Modifier
+----------- | ------ | -------------------------- | ------------------------------ | --------
+Block malicious URL | DENY | URI/URL<hr>Value Condition = Equals | | 
+Quarantine Artifact with particular byte string | QUARANTINE | Artifact<hr>Condition = Contains | | 
+Block access to external IP address by null routing at specific network routers | DENY | Network Connection<hr>Condition = Contains | Network router<hr>Manufacturer, Model, Serial Number Value = 123
 
-<span id="_Toc442108309" class="anchor"><span id="_Toc442108415"
-class="anchor"><span id="_Toc442108518" class="anchor"><span
-id="_Toc442171159" class="anchor"><span id="_Toc442171264"
-class="anchor"><span id="_Toc442185970" class="anchor"><span
-id="_Toc442186151" class="anchor"><span id="_Toc442215807"
-class="anchor"><span id="_Ref437348163" class="anchor"><span
-id="_Toc444258427"
-class="anchor"></span></span></span></span></span></span></span></span></span></span>
+### Modifiers
 
-### <span id="_Toc444611159" class="anchor"><span id="_Ref444670890" class="anchor"><span id="_Toc459584787" class="anchor"></span></span></span>Modifiers
+“Modifiers” provide additional information about the action such as time, periodicity, duration, and location. Modifiers can denote the when, where, and how aspects of an action. Modifiers are similar to specifiers in that they can provide additional context specific details, and are intended to provide additional details for action/actuator pairs.
 
-“Modifiers” provide additional information about the action such as
-time, periodicity, duration, and location. Modifiers can denote the
-when, where, and how aspects of an action. Modifiers are similar to
-specifiers in that they can provide additional context specific details,
-and are intended to provide additional details for action/actuator
-pairs.
+When present, modifiers are always associated with a specific action, however, some modifiers can generally be applied to more than one action or to all OpenC2 actions. A modifier is said to be “actuator-specific”, “action-specific”, or “universal” depending on the applicability of the modifier within the language.
 
-When present, modifiers are always associated with a specific action,
-however, some modifiers can generally be applied to more than one action
-or to all OpenC2 actions. A modifier is said to be “actuator-specific”,
-“action-specific”, or “universal” depending on the applicability of the
-modifier within the language.
+The modifier can also be used to convey the need for additional status information about the execution of an action. Modifiers can be used to indicate whether the actuator should explicitly acknowledge receipt of the command, respond upon completion of the execution of the command, or provide some other status information. The requested status/information will be carried in a RESPONSE. Refer to Section 4.6.
 
-The modifier can also be used to convey the need for additional status
-information about the execution of an action. Modifiers can be used to
-indicate whether the actuator should explicitly acknowledge receipt of
-the command, respond upon completion of the execution of the command, or
-provide some other status information. The requested status/information
-will be carried in a RESPONSE. Refer to Section 4.6.
+Table 3-4. Example Usage of Modifiers
 
-<span id="_Toc444260051" class="anchor"><span id="_Toc444611353"
-class="anchor"><span id="_Toc459021504" class="anchor"><span
-id="_Toc459584889" class="anchor"></span></span></span></span>Table ‑.
-Example Usage of Modifiers
+Description | Action | Target<hr>Target-Specifier | Actuator<hr>Actuator-Specifier | Modifier
+----------- | ------ | -------------------------- | ------------------------------ | --------
+Shutdown a system, immediate | STOP | Device<hr>Device Object Type | endpoint<hr>(optional) | method = immediate
+Start Process with Delay | START | Process<hr>Process Object Type | endpoint<hr>(optional) | Delay = duration
+Quarantine a device | CONTAIN | Device<hr>Device Object Type | network<hr>(optional) | where (network segment, vlan)
+Block access to suspicious external IP address by redirecting external DNS queries to an internal DNS server | DENY | Network Connection<hr>Network Connection Object Type | DNS Server | method = sinkhole
 
-  Description                                                                                                    Action    Target                           Actuator             Modifier
-  -------------------------------------------------------------------------------------------------------------- --------- -------------------------------- -------------------- -------------------------------
-                                                                                                                           Target-Specifier                 Actuator-Specifier   
-  Shutdown a system, immediate                                                                                   STOP      Device                           endpoint             method = immediate
-                                                                                                                           Device Object Type               (optional)           
-  Start Process with Delay                                                                                       START     Process                          endpoint             Delay = duration
-                                                                                                                           Process Object Type              (optional)           
-  Quarantine a device                                                                                            CONTAIN   Device                           network              where (network segment, vlan)
-                                                                                                                           Device Object Type               (optional)           
-  Block access to suspicious external IP address by redirecting external DNS queries to an internal DNS server   DENY      Network Connection               DNS Server           method = sinkhole
-                                                                                                                           Network Connection Object Type                        
-
-<span id="_Ref457998374" class="anchor"><span id="_Ref437348731" class="anchor"><span id="_Ref437348740" class="anchor"><span id="_Ref437348789" class="anchor"><span id="_Toc444258428" class="anchor"><span id="_Toc444611160" class="anchor"><span id="_Toc459584788" class="anchor"></span></span></span></span></span></span></span>Actions
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Actions
 
 This section defines the set of OpenC2 actions grouped by their general
 activity. The following table summarizes the definition of the OpenC2
