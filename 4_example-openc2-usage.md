@@ -75,4 +75,4 @@ RESPONSE is used to provide data requested as a result of an action. The RESPONS
 ### [4.6.1 RESPONSE](actions/response.md#response)
 ### [4.6.2 ALERT](actions/alert.md#alert)
 
-# [5. Example OpenC2 Use Case: Mitigate Evil Domain](5_example-openc2-use-case.md)
+# [5. Example OpenC2 Use Case: Mitigate Evil Domain](5_example-openc2-use-case.md#5-example-openc2-use-case)
