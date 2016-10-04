@@ -1,4 +1,4 @@
-# [FORWARD](0_forward.md)
+# [FORWARD](0_forward.md#forward)
 
 # 1. Introduction
 
@@ -38,4 +38,4 @@ Section 5, Example OpenC2 Use Case, depicts an example use case for mitigating a
 
 Appendix A, Example OpenC2 commands, contains example OpenC2 commands organized in tables by OpenC2 action. These example commands were based on use cases provided by government agencies, critical infrastructure, industry (e.g., security orchestrator, actuator, and sensor) and academia.
 
-# [2. Background](2_background.md)
+# [2. Background](2_background.md#2-background)
